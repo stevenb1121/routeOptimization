@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8' />
+	<title>Route Optimization</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<style>
+	</style>
+</head>
+<body>
+	<h1>Welcome to the Route Optimization Application!</h1>
+	<p>Instructions: Enter the starting and ending address into the below fields then press the "Next Page" button go to the next step.</p>
+	<p>Note: For best results try to include as much information as possible (address, city, state).</p>
+	<p>Enter Starting Address Here: 
+		<input type="text" id="startAddress" name="startAddress" value="109 Guard Drive, Lawrenceburg TN">
+	</p> 
+	<p>Enter Ending   Address Here: 
+		<input type="text" id="endAddress" name="endAddress" value="University of North Alabama Florence">
+	</p>
+	<button id="nextPage" name="nextPage">Next Page</button>
+	<script>
+		//variable to access button
+		const nextPageButton = document.getElementById("nextPage");
+		//when button is clicked
+		nextPageButton.addEventListener("click", (event) => 
+		{
+			//store the start and end addres to local storage to be able to access it on next page
+			localStorage.setItem("startAddress",document.getElementById("startAddress").value);
+			localStorage.setItem("endAddress", document.getElementById("endAddress").value);
+			//goes to next page
+			window.location.href = "addressList.html"
+		});
+	</script>
+</body>
+</html>
